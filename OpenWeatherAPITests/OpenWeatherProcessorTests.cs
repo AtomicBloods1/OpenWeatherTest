@@ -39,5 +39,6 @@ namespace OpenWeatherAPITests
             OpenWeatherProcessor openWeatherProcessor = OpenWeatherProcessor.Instance;
             Assert.ThrowsAsync<ArgumentException>(openWeatherProcessor.GetCurrentWeatherAsync);
         }
+        //Hello World
     }
 }
