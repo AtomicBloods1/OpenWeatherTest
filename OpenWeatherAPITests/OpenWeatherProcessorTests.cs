@@ -15,5 +15,14 @@ namespace OpenWeatherAPITests
 
             Assert.ThrowsAsync<ArgumentException>(openWeatherProcessor.GetOneCallAsync);
         }
+
+        [Fact]
+        public void GetCurrentWeatherAsync_IfApiKeyEmptyOrNull_ThrowArgumentException()
+        {
+            OpenWeatherProcessor openWeatherProcessor = OpenWeatherProcessor.Instance;
+
+
+            Assert.ThrowsAsync<ArgumentException>(openWeatherProcessor.GetCurrentWeatherAsync);
+        }
     }
 }
