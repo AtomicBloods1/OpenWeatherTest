@@ -4,6 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <UserSecretsId>8149c242-f1c7-495a-9677-7d8b2f611b6d</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

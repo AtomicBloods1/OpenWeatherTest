@@ -75,6 +75,17 @@ namespace OpenWeatherAPI
         /// <returns></returns>
         public async Task<OWCurrentWeaterModel> GetCurrentWeatherAsync()
         {
+
+            if(ApiKey == null)
+            {
+                throw new ArgumentException("apiKey null ou vide");
+            }
+            
+            if(ApiHelper.ApiClient == null)
+            {
+                throw new ArgumentException("le client http n'est pas initialisé");
+            }
+
             EndPoint = $"/weather?";
 
             /// Src : https://stackoverflow.com/a/14517976/503842
