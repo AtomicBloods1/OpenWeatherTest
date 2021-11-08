@@ -50,7 +50,17 @@ namespace OpenWeatherAPI
         /// <returns></returns>
         public async Task<OpenWeatherOneCallModel> GetOneCallAsync()
         {
-            
+
+            if (ApiKey == null)
+            {
+                throw new ArgumentException("apiKey est null ou vide");
+            }
+
+            if (ApiHelper.ApiClient == null)
+            {
+                throw new ArgumentException("le client http n'est pas initialisé");
+            }
+
             EndPoint = $"/onecall?";
 
             /// Src : https://stackoverflow.com/a/14517976/503842
@@ -78,7 +88,7 @@ namespace OpenWeatherAPI
 
             if(ApiKey == null)
             {
-                throw new ArgumentException("apiKey null ou vide");
+                throw new ArgumentException("apiKey est null ou vide");
             }
             
             if(ApiHelper.ApiClient == null)
